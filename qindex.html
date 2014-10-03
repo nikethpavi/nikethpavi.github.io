@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Niketh and Pavi</title>
+  
+  <script type="text/javascript" src="./res/jquery-accord.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+  
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+  <link href="./res/media-queries.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="./res/style-light.css">
+   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+<style type="text/css">
+ #map {
+ 	width:400px;
+ 	height:600px;
+      }
+html { 
+  background: url("./res/bg.jpg"); no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+#pagewrap {
+	width: 800px;
+	margin: 0 auto;
+}
+    h2 {
+    cursor: pointer;
+    color: #71380F;
+    height:100px;
+    text-align: center;
+    font-weight:normal;
+    font-size:48px;
+    font-family:'Tangerine',cursive;
+    line-height:80px;
+    font-style:oblique;
+    background-image:url("./res/scroll_c.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: 700px Auto;
+}
+   h3 {
+    cursor: pointer;
+    color: #71380F;
+    height:600px;
+    text-align: center;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    background-image:url("./res/scroll.png");
+    margin-top:-48px;
+    background-repeat:no-repeat;
+    background-position:center -94px;
+    background-size: 700px Auto;    
+} 
+ h5 {
+    cursor: pointer;
+    color: #71380F;
+    height:800px;
+    text-align: center;
+    margin-top:-48px;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    background-image:url("./res/scrollmap.png");
+    background-repeat:no-repeat;
+    background-position:center -94px;
+    background-size: 700px Auto;    
+}
+  h4 {
+    cursor: pointer;
+    color: #71380F;
+    height:600px;
+    text-align: center;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    max-width:400px;
+    margin-left:22.5%;
+    margin-top:-25px;
+    
+}
+   h6 {
+    color: #71380F;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-weight:normal;
+    font-size:48px;
+    text-align: center;
+ }
+ h7 {
+    color: #71380F;;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-size:96px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: right;
+ }
+#accordion h2.ui-state-active {
+     cursor: pointer;
+    color: #71380F;
+    height:100px;
+    text-align: center;
+    font-weight:normal;
+    font-family:'Tangerine', cursive;
+        line-height:80px;
+    font-style:oblique;
+    background-image:url("./res/scroll_c_b.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: 700px Auto;
+}
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+
+    background: url("./res/lands.png") no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.btn-dark {
+    border-radius: 0;
+    color: #71380F;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #BD7F52;
+    background-color: rgba(0,0,0,0.8);
+}
+
+</style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+
+$(window).load(function(){
+init();
+var jQueryHeight = $( window ).height();
+var jQueryWidth = $( window ).width();
+
+});
+function init(){
+    controlScroll();
+    skipScroll();
+    initialize();
+    calcRoute();
+}
+function controlScroll(){
+$(function() {
+	$( "#accordion" ).accordion({
+		heightStyle: "content",
+		collapsible: true,
+		active: false,
+		activate: function( event, ui ) {
+			if(!$.isEmptyObject(ui.newHeader.offset())) {
+				$('html:not(:animated), body:not(:animated)').animate({ scrollTop: ui.newHeader.offset().top }, 'slow');
+				initialize();
+				calcRoute();
+			}
+		}
+	});
+});
+
+} 
+function skipScroll(){
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+} 
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+
+function initialize() {
+directionsDisplay = new google.maps.DirectionsRenderer();
+                           var mapOptions = {
+                   
+                    zoom: 16,
+                    overviewMapControl: true,
+                    overviewMapControlOptions: {
+opened: true
+},
+		 center: new google.maps.LatLng(12.982200, 80.267136), //Mandabam
+
+                    styles: [{featureType:"administrative",stylers:[{visibility:"on"}]},{featureType:"poi",stylers:[{visibility:"on"}]},{featureType:"road",stylers:[{visibility:"simplified"}]},{featureType:"water",stylers:[{visibility:"simplified"}]},{featureType:"transit",stylers:[{visibility:"simplified"}]},{featureType:"landscape",stylers:[{visibility:"simplified"}]},{featureType:"road.highway",stylers:[{visibility:"on"}]},{featureType:"road.local",stylers:[{visibility:"on"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{visibility:"on"}]},{featureType:"water",stylers:[{color:"#754b24"},{lightness:0}]},{stylers:[{saturation:-0}]},{featureType:"road"}]
+                };
+		 var myLatlng = new google.maps.LatLng(12.982200, 80.267136);
+		   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsDisplay.setMap(map); 
+                var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Hare Krishna Movement, Chennai !'
+  });
+  }
+            function calcRoute() {
+  var start = document.getElementById('from').value;
+  var end = document.getElementById('to').value;
+  var request = {
+      origin:$("#from").val(),
+      destination:$("#to").val(),
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+  $("#calculate-route").submit(function(event) {
+          event.preventDefault();
+          calcRoute();
+        });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+   
+
+<style type="text/css"></style>
+
+
+</head>
+<body>
+<header id="top" class="header">
+        <div class="section">
+                        <br> 
+            <br>     
+            <br>
+                        <h7>
+
+		We are tying the knot!!
+                        </h7>                       <h6>
+            <br>
+                        <br>
+            <br>            <br> <br>
+	<br><br><br><br><br>
+            <br>
+            <a href="#accordion" class="btn btn-dark btn-lg" style="text-decoration:none;">Join us on our journey...</a>
+            </h6>
+        </div>
+    </header>
+<div id="pagewrap">
+
+<div id="accordion">
+<h2 id="top">How it all unfolded.. </h2>
+
+<div class="section">
+<h3>
+<div>
+<h4>
+<img src="./res/animated.gif"/>
+</h4>
+</div>
+</h3>
+</div>
+
+<h2 id="top">Events </h2>
+
+<div class="section">
+<h3>
+<div>
+<h4>
+Maruthani <iframe src="https://www.flickr.com/photos/kvijesh/5520941396/player/" width="320" height="212" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+</h4>
+</div>
+</h3>
+</div>
+
+<h2 id="venue">Venue</h2>
+
+<div class="section">
+<h5>
+<div>
+<h4>
+<form id="calculate-route" name="calculate-route" action="#" method="get">
+      <input type="text" id="from" name="from" required="required" placeholder="Where are you travelling from?" STYLE=" font-weight:bold;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" maxlength="60" />
+      
+      <input name="to" type="hidden" id="to" 
+               value="Hare Krishna Movement,Chennai, Tamil Nadu 600041, India"/>
+
+	
+      
+    </form>
+
+ <div id="map"></div>
+</h4>
+</div>
+</h5>
+</div>
+ <h2 id="say">Say something</h2>
+
+<div class="section" >
+<h3>
+<div>
+<h4>
+
+this is another answe. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dolor magna, elementum sit amet adipiscing vitae, varius vitae erat. Phasellus sodales, arcu sit amet facilisis condimentum, magna mi fermentum augue, eget feugiat elit nulla euismod ligula. In mollis viverra magna sed placerat. Pellentesque varius, urna id laoreet luctus, est ante molestie ante, fringilla congue tortor orci non arcu. Nullam quis imperdiet justo. Pellentesque sit amet justo ipsum, vitae feugiat elit. Suspendisse tincidunt metus nec ante molestie mattis. Curabitur diam velit, posuere bibendum iaculis ac, egestas at lacus. Aenean hendrerit ullamcorper lorem sit amet euismod. In a metus lectus, non elementum neque.
+
+</h4>
+</div>
+</h3>
+</div>
+</div>
+</div>
+  
+
+
+
+
+</body></html>

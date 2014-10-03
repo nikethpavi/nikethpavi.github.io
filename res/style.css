@@ -1,0 +1,57 @@
+body {
+    background-image: url("./res/bg.jpg");
+}
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+#pagewrap {
+	width: 800px;
+	margin: 0 auto;
+}
+    h2 {
+    cursor: pointer;
+    color: #71380F;
+    height:100px;
+    text-align: center;
+    line-height: 75px;
+    font-weight:bold;
+    font-family:serif;
+    font-style:oblique;
+    background-image:url("./res/scroll_c.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: 700px Auto;
+}
+   h3 {
+    cursor: pointer;
+    color: #71380F;
+    height:600px;
+    text-align: center;
+    font-family:serif;
+    font-style:oblique;
+    background-image:url("./res/scroll.png");
+    background-repeat:no-repeat;
+    background-position:center -100px;
+    background-size: 700px Auto;
+    
+}
+   h4 {
+    cursor: pointer;
+    color: #71380F;
+    height:600px;
+    text-align: center;
+    font-family:serif;
+    font-style:oblique;
+    max-width:400px;
+    margin-left:22.5%;
+    margin-top:-25px;
+    
+}
+
+.open {
+    background-image:url();
+}
+

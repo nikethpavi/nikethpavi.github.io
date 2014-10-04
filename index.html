@@ -63,20 +63,7 @@ img {
     background-position:center -94px;
     background-size: 700px Auto;    
 } 
- h5 {
-    cursor: pointer;
-    color: #71380F;
-    height:800px;
-    text-align: center;
-    margin-top:-48px;
-    font-family:'Tangerine', cursive;
-    font-style:oblique;
-    background-image:url("./res/scrollmap.png");
-    background-repeat:no-repeat;
-    background-position:center -94px;
-    background-size: 700px Auto;    
-}
-  h4 {
+   h4 {
     cursor: pointer;
     color: #71380F;
     height:600px;
@@ -86,7 +73,19 @@ img {
     max-width:400px;
     margin-left:22.5%;
     margin-top:-25px;
-    
+    }
+ h5 {
+    cursor: pointer;
+    color: #71380F;
+    height:800px;
+    text-align: center;
+    margin-top:-48px;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    background-image:url("./res/scrollh5.png");
+    background-repeat:no-repeat;
+    background-position:center -94px;
+    background-size: 700px Auto;    
 }
    h6 {
     color: #71380F;
@@ -96,14 +95,49 @@ img {
     font-size:48px;
     text-align: center;
  }
- h7 {
+ #landingpage{
     color: #71380F;;
     font-family:'Tangerine', cursive;
     font-style:oblique;
     font-size:96px;
     text-shadow: 4px 4px 4px #aaa;
-    text-align: right;
+    text-align: left;
  }
+.mytextbox{
+    cursor: pointer;
+    color: #71380F;
+    height:600px;
+    text-align: center;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-weight:normal;
+    max-width:420px;
+    font-size:24px;
+    margin-left:22.5%;
+    margin-top:-25px;
+    }
+    #venueaddr{
+    cursor: pointer;
+    color: #71380F;
+    text-align: left;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-weight:normal;
+    font-size:24px;
+}
+#mapbgholder{
+    cursor: pointer;
+    color: #71380F;
+    height:1100px;
+    text-align: center;
+    margin-top:-48px;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    background-image:url("./res/scrollh9.png");
+    background-repeat:no-repeat;
+    background-position:center -94px;
+    background-size: 700px Auto;    
+}
 #accordion h2.ui-state-active {
      cursor: pointer;
     color: #71380F;
@@ -123,7 +157,7 @@ img {
     position: relative;
     width: 100%;
 
-    background: url("./res/lands2.png") no-repeat center center scroll;
+    background: url("./res/lands_comp.png") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -141,7 +175,49 @@ img {
     color: #BD7F52;
     background-color: rgba(0,0,0,0.8);
 }
+form {
+    /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 420px;
+    /* To see the outline of the form */
+    padding: 1em;
+    border: 1px solid #71380F;;
+    border-radius: .2em;
+}
+form div + div {
+    margin-top: 1em;
+}
+label {
+    /* To make sure that all label have the same size and are properly align */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+input, textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em sans-serif;
 
+    /* To give the same size to all text field */
+    
+    /* To harmonize the look & feel of text field border */
+    border: 1px solid #71380F;
+}
+input:focus, textarea:focus {
+    /* To give a little highlight on active elements */
+    border-color: #000;
+}
+textarea {
+    /* To properly align multiline text fields with their labels */
+    vertical-align: top;
+
+    /* To give enough room to type some text */
+    height: 5em;
+
+    /* To allow users to resize any textarea vertically
+       It does not work on every browsers */
+    resize: vertical;
+}
 </style>
   
 
@@ -252,10 +328,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
                         <br> 
             <br>     
             <br>
-                        <h7>
+                        <div id="landingpage">
 
 		We are tying the knot!!
-                        </h7>                       <h6>
+                        </div>                       <h6>
             <br>
                         <br>
             <br>            <br> <br>
@@ -284,7 +360,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <div class="section">
 <h3>
-<div>
+<div class="mytextbox">
 <h4>
 Maruthani <iframe src="https://www.flickr.com/photos/kvijesh/5520941396/player/" width="320" height="212" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 </h4>
@@ -295,11 +371,21 @@ Maruthani <iframe src="https://www.flickr.com/photos/kvijesh/5520941396/player/"
 <h2 id="venue">Venue</h2>
 
 <div class="section">
-<h5>
-<div>
+
+<div id="mapbgholder">
+
 <h4>
+<br><br>
+<div id="venueaddr">
+<b>Jot down the address : </b><br>
+Hare Krishna Movement,<br>
+63, 1st Sea Ward Road, Valmiki Nagar, Thiruvanmiyur,<br>
+Chennai - 600041, <br>
+Tamil Nadu, India.<br><br>
+<b>Or, plan your journey ;) </b><br><br>
+</div>
 <form id="calculate-route" name="calculate-route" action="#" method="get">
-      <input type="text" id="from" name="from" required="required" placeholder="Where are you travelling from?" STYLE=" font-weight:bold;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" maxlength="60" />
+      <input type="text" id="from" name="from" required="required" placeholder="Where are you travelling from?" STYLE=" font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" maxlength="60" />
       
       <input name="to" type="hidden" id="to" 
                value="Hare Krishna Movement,Chennai, Tamil Nadu 600041, India"/>
@@ -311,34 +397,45 @@ Maruthani <iframe src="https://www.flickr.com/photos/kvijesh/5520941396/player/"
  <div id="map"></div>
 </h4>
 </div>
-</h5>
+
 </div>
  <h2 id="say">Say something</h2>
 
 <div class="section" >
-<h3>
-<div>
-<h4>
+<h5>
+<div class="mytextbox">
 
 <form action="http://getsimpleform.com/messages?form_api_token=a90493b3104f7b1973a9dd7d9e150e4e" method="post">
   <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
    <input type='hidden' name='redirect_to' value='http://nikethpavi.github.io/#accordion' />
   <!-- all your input fields here.... -->
-  Your name :
-  <input type='text' name='Name :' STYLE=" font-weight:bold;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" />
-  <br>
-    Would youl like to leave us a private message ?
-  <input type='text' name='private  :' STYLE=" font-weight:bold;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" />
-<br>
-    Would you like to leave us a public message ?
-  <input type='text' name='public :' STYLE=" font-weight:bold;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" />
-
-  <input type='submit' value='Submit' />
+You are cordially invited to attend our wedding on 22nd January 2015 !!<br><br>
+    <div>
+        <label for="name">Your Name :</label>
+        <input type="text" id="name"  name='Name :' STYLE=" font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;width:250px;" size="60" />
+    </div>
+    <div>
+        <label for="mail">E-mail id :</label>
+        <input type="email" id="mail"  name='Mail :' STYLE=" font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;width:250px;" placeholder="This will remain private :)" size="60" />
+    </div>
+    <div>
+        <label for="rsvp">RSVP : </label>
+          <input type="radio" name="rsvp" value="yes">Yes     <input type="radio" name="rsvp" value="maybe">May Be <input type="radio" name="rsvp" value="no">No 
+    </div>
+    <div>
+        <label for="pmsg">You can leave us a private message here : </label>
+        <textarea id="pmsg"name='private  :' STYLE="font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;width:250px;" size="300"></textarea>
+    </div>
+    <div>
+        <label for="msg">and/or a public message here : </label>
+        <textarea id="msg"name='public  :' STYLE="font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;width:250px;"  placeholder="This will be published after moderation ;)"size="300"></textarea>
+    </div>
+    <div>
+        <input type='submit' value='Submit' STYLE=" font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" />
+    </div>
 </form>
-      
-</h4>
 </div>
-</h3>
+</h5>
 </div>
 </div>
 </div>

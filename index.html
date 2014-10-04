@@ -169,6 +169,7 @@ img {
     background-position:center;
     background-size: 700px Auto;
 }
+@media (min-width: 1000px) {
 #nc{
 left: .5%;bottom:0%;
 height:100vh;
@@ -181,10 +182,25 @@ height:100vh;
 position:fixed;
 z-index:0;
 }
+}
 
+@media(max-width: 999px) {
+#nc{
+left: .5%;
+height:0vh;
+position:fixed;
+z-index:0;
+}
+#pc{
+right: .5%;
+height:0vh;
+position:fixed;
+z-index:0;
+}
+}
 .btn-dark {
     border-radius: 0;
-    color: #71380F;
+    color: #BD7F52;
     background-color: rgba(0,0,0,0.4);
 }
 

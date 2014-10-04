@@ -234,13 +234,13 @@ blockquote{
   text-align: center;
   
   /*Borders - (Optional)*/
-  border-left: 15px solid #c76c0c;
-  border-right: 2px solid #c76c0c;
+  border-left: 15px solid #71380F;
+  border-right: 2px solid #71380F;
   
   /*Box Shadow - (Optional)*/
-  -moz-box-shadow: 2px 2px 15px #c76c0c;
-  -webkit-box-shadow: 2px 2px 15px #c76c0c;
-  box-shadow: 2px 2px 15px #c76c0c;
+  -moz-box-shadow: 2px 2px 15px #71380F;
+  -webkit-box-shadow: 2px 2px 15px #71380F;
+  box-shadow: 2px 2px 15px #71380F;
 }
 
 blockquote::before{
@@ -423,7 +423,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <h3>
 <div>
 <h4>
-<img src="./res/animated.gif"/>
+<img id="story" src="./res/animated.gif"/>
 </h4>
 </div>
 </h3>

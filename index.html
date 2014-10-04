@@ -294,6 +294,7 @@ $(function() {
 				$('html:not(:animated), body:not(:animated)').animate({ scrollTop: ui.newHeader.offset().top }, 'slow');
 				initialize();
 				calcRoute();
+				    document.getElementById("story").src= './res/animated.gif'; 
 			}
 		}
 	});
@@ -423,7 +424,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <h3>
 <div>
 <h4>
-<img src="./res/animated.gif"/>
+<img id="story" src="./res/animated.gif"/>
 </h4>
 </div>
 </h3>

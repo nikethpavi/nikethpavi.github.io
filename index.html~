@@ -8,7 +8,7 @@
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
 <meta name=viewport
-  content="width=device-width, height=device-height, initial-scale=0">
+  content="width=device-width, height=device-height, initial-scale=1.0">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
   <link href="./res/media-queries.css" rel="stylesheet" type="text/css">
@@ -161,6 +161,17 @@ img {
     background-position:center;
     background-size: 700px Auto;
 }
+#landimg{
+    position: relative;
+    height:100vh;
+    z-index:1;
+    background: url("./res/lands_comp.png") no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+ }
+
 @media (orientation: landscape) {
 #nc{
 left: .5%;bottom:0%;
@@ -174,16 +185,6 @@ height:100vh;
 position:fixed;
 z-index:0;
 }
-#landimg{
-    position: relative;
-    height:100vh;
-    z-index:1;
-    background: url("./res/lands_comp.png") no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
 }
 
 @media(max-width: 1200px) and (orientation: portrait) {
@@ -199,16 +200,6 @@ height:0vh;
 position:fixed;
 z-index:0;
 }
-#landimg{
-    position: relative;
-    height:100vh;
-    z-index:1;
-    background: url("./res/lands_comp.png") no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
- }
 }
 .btn-dark {
     border-radius: 0;

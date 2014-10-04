@@ -169,7 +169,7 @@ img {
     background-position:center;
     background-size: 700px Auto;
 }
-@media (min-width: 1000px) {
+@media (min-width: 925px) {
 #nc{
 left: .5%;bottom:0%;
 height:100vh;
@@ -184,7 +184,7 @@ z-index:0;
 }
 }
 
-@media(max-width: 999px) {
+@media(max-width: 924px) {
 #nc{
 left: .5%;
 height:0vh;

@@ -189,7 +189,7 @@ z-index:0;
 }
 
 
-@media (min-width: 800px) and (orientation: portrait) {
+@media (min-width: 800px) and (orientation: landscape) {
 #nc{
 left: .5%;
 height:0vh;
@@ -202,6 +202,7 @@ height:0vh;
 position:fixed;
 z-index:0;
 }
+
 #landimg{
     position: relative;
     height:100vh;
@@ -212,7 +213,6 @@ z-index:0;
     background-size: cover;
     -o-background-size: cover;
  }
-
 }
 .btn-dark {
     border-radius: 0;

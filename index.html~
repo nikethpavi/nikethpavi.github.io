@@ -201,7 +201,7 @@ z-index:0;
 }
 #landimg{
     position: relative;
-    height:10vh;
+    height:70vh;
     z-index:1;
     background: url("./res/lands_comp.png") no-repeat center center scroll;
     -webkit-background-size: cover;

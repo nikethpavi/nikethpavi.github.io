@@ -218,6 +218,52 @@ textarea {
        It does not work on every browsers */
     resize: vertical;
 }
+
+blockquote{
+  display:block;
+  background: #e4c994;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-family:'Tangerine', cursive;
+  font-style:oblique;
+  line-height: 1.2;
+    color: #71380F;
+  text-align: center;
+  
+  /*Borders - (Optional)*/
+  border-left: 15px solid #c76c0c;
+  border-right: 2px solid #c76c0c;
+  
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px #c76c0c;
+  -webkit-box-shadow: 2px 2px 15px #c76c0c;
+  box-shadow: 2px 2px 15px #c76c0c;
+}
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family:'Tangerine', cursive;
+  font-style:oblique;
+  font-size: 96px;
+  color: #71380F;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:1px;
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+
 </style>
   
 
@@ -236,6 +282,7 @@ function init(){
     initialize();
     calcRoute();
 }
+
 function controlScroll(){
 $(function() {
 	$( "#accordion" ).accordion({
@@ -273,6 +320,7 @@ function skipScroll(){
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
+var dmode=1;
 
 function initialize() {
 directionsDisplay = new google.maps.DirectionsRenderer();
@@ -295,15 +343,40 @@ opened: true
       map: map,
       title: 'Hare Krishna Movement, Chennai !'
   });
+      document.getElementById("car").onclick = function() {
+    dmode=1;
+    this.src = './res/car.png';        
+    document.getElementById("bus").src= './res/bus2.png'; 
+    calcRoute();           
+};
+document.getElementById("bus").onclick = function() {
+dmode=0;
+
+    this.src = './res/bus.png';        
+    document.getElementById("car").src= './res/car2.png';  
+    calcRoute();      
+};
   }
+
+
+
             function calcRoute() {
+            
   var start = document.getElementById('from').value;
   var end = document.getElementById('to').value;
+ if (dmode==1){
   var request = {
       origin:$("#from").val(),
       destination:$("#to").val(),
       travelMode: google.maps.TravelMode.DRIVING
-  };
+  };}
+   if (dmode==0){
+  var request = {
+      origin:$("#from").val(),
+      destination:$("#to").val(),
+      travelMode: google.maps.TravelMode.TRANSIT
+  };}
+
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
@@ -382,10 +455,10 @@ Hare Krishna Movement,<br>
 63, 1st Sea Ward Road, Valmiki Nagar, Thiruvanmiyur,<br>
 Chennai - 600041, <br>
 Tamil Nadu, India.<br><br>
-<b>Or, plan your journey <i>=)</i> </b><br><br>
+<b>Or, plan your journey ;) </b><br><br>
 </div>
 <form id="calculate-route" name="calculate-route" action="#" method="get">
-      <input type="text" id="from" name="from" required="required" placeholder="Where are you travelling from?" STYLE=" font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" maxlength="60" />
+      <input type="text" id="from" name="from" required="required" placeholder="Where are you travelling from?" STYLE=" font-size:24px;font-family:'Tangerine', cursive;font-style:oblique;color: #71380F;   background-color: #e4c994;" size="60" maxlength="60" /> <img id="car" src="./res/car.png" height="30" width="30">  <img id="bus" src="./res/bus2.png" height="30" width="30">
       
       <input name="to" type="hidden" id="to" 
                value="Hare Krishna Movement,Chennai, Tamil Nadu 600041, India"/>
@@ -437,8 +510,24 @@ You are cordially invited to attend our wedding on 22nd January 2015 !!<br><br>
 </div>
 </h5>
 </div>
+ <h2 id="say">Guest-Book</h2>
+
+<div class="section" >
+<h5>
+<div class="mytextbox">
+<br><br><br>
+<blockquote>
+I am looking forward to that Rasamalai... :P
+<br>
+-You Know Who
+    </blockquote>
+</div>
+</h5>
+</div>
+
 </div>
 </div>
+
   
 
 

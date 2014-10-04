@@ -7,7 +7,8 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
-  
+<meta name=viewport
+  content="width=device-width, initial-scale=1.0, minimum-scale=0.55 maximum-scale=1.0">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
   <link href="./res/media-queries.css" rel="stylesheet" type="text/css">
@@ -184,7 +185,7 @@ z-index:0;
 }
 }
 
-@media(max-width: 1200px) and (orientation: potrait) {
+@media(max-width: 1200px) and (orientation: portrait) {
 #nc{
 left: .5%;
 height:0vh;

@@ -188,7 +188,7 @@ z-index:0;
 
 }
 
-@media(max-width: 1200px) and (orientation: portrait) {
+@media handheld, only screen and (max-width: 640px) and (orientation: portrait) {
 #nc{
 left: .5%;
 height:0vh;
@@ -212,6 +212,20 @@ z-index:0;
     -o-background-size: cover;
  }
 
+}
+@media (min-width: 800px) and (orientation: portrait) {
+#nc{
+left: .5%;
+height:0vh;
+position:fixed;
+z-index:0;
+}
+#pc{
+right: .5%;
+height:0vh;
+position:fixed;
+z-index:0;
+}
 }
 .btn-dark {
     border-radius: 0;

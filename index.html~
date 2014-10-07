@@ -86,29 +86,6 @@ img {
     background-position:center -94px;
     background-size: 700px Auto;    
 }
-   #lbutton{
-     position: absolute;
-    top: 85%;
-    width: 100%;
-    color: #71380F;
-    font-family:'Tangerine', cursive;
-    font-style:oblique;
-    font-weight:normal;
-    font-size:48px;
-    text-align: center;
-    z-index:2;
- }
- #landingpage{
-  position: absolute;
-  top:4%;
-    color: #71380F;;
-    font-family:'Tangerine', cursive;
-    font-style:oblique;
-    font-size:96px;
-    text-shadow: 4px 4px 4px #aaa;
-    text-align: left;
-        z-index:2;
- }
  
 .mytextbox{
     cursor: pointer;
@@ -184,6 +161,29 @@ z-index:0;
     -o-background-size: cover;
  }
 
+   #lbutton{
+     position: absolute;
+    top: 85%;
+    width: 100%;
+    color: #71380F;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-weight:normal;
+    font-size:48px;
+    text-align: center;
+    z-index:2;
+ }
+ #landingpage{
+  position: absolute;
+  top:4%;
+    color: #71380F;;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-size:96px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: left;
+        z-index:2;
+ }
 }
 
 
@@ -201,6 +201,29 @@ position:fixed;
 z-index:0;
 }
 
+   #lbutton{
+     position: absolute;
+    top: 85%;
+    width: 100%;
+    color: #71380F;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-weight:normal;
+    font-size:48px;
+    text-align: center;
+    z-index:2;
+ }
+ #landingpage{
+  position: absolute;
+  top:4%;
+    color: #71380F;;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-size:96px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: left;
+        z-index:2;
+ }
 #landimg{
     position: relative;
     height:100vh;
@@ -226,9 +249,32 @@ position:fixed;
 z-index:0;
 }
 
+   #lbutton{
+     position: absolute;
+    top: 85%;
+    width: 0%;
+    color: #71380F;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-weight:normal;
+    font-size:0px;
+    text-align: center;
+    z-index:2;
+ }
+ #landingpage{
+  position: relative;
+    color: #71380F;;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-size:48px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: center;
+        z-index:2;
+
+ }
 #landimg{
     position: relative;
-    height:100vh;
+    height:0vh;
     z-index:1;
     background: url("./res/lands_comp.png") no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -463,8 +509,8 @@ dmode=0;
         });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
-   
 
 <style type="text/css"></style>
 
@@ -473,7 +519,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <body>
         <div id="landimg">
             <div id="landingpage">
-		We are tying the knot!!
+		We are tying the knot!!<br>
                         </div>                       <div id="lbutton">
             
             <a href="#accordion" class="btn btn-dark btn-lg" style="text-decoration:none;">Join us on our journey...</a>

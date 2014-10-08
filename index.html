@@ -8,7 +8,8 @@
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-
+<link rel="stylesheet" href="./js/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js"></script>
   <link href="./res/media-queries.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="./res/style-light.css">
    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
@@ -18,11 +19,10 @@
  	height:600px;
       }
 html { 
-  background: url("./res/bg.jpg"); no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+background: -webkit-linear-gradient(left, #A0A2A6 , #FFFFFF,#A0A2A6); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right,#A0A2A6 , #FFFFFF,#A0A2A6); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right,#A0A2A6 , #FFFFFF,#A0A2A6); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right,#A0A2A6 , #FFFFFF,#A0A2A6); 
 }
 img {
 	max-width: 100%;
@@ -33,6 +33,32 @@ img {
 #pagewrap {
 	width: 800px;
 	margin: 0 auto;
+}
+#intro{
+    color: #71380F;;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-size:64px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: center;
+    width:50%;
+    margin-left:25%;
+}
+#footr{
+    color: #71380F;;
+    font-size:7px;
+    text-align: center;
+    margin-left:22.5%
+}
+#countbox{
+    color: #71380F;;
+    font-family:'Tangerine', cursive;
+    font-style:oblique;
+    font-size:32px;
+    text-shadow: 4px 4px 4px #aaa;
+    text-align: center;
+    width:50%;
+        margin-left:25%;
 }
     h2 {
     cursor: pointer;
@@ -50,7 +76,6 @@ img {
     background-size: 700px Auto;
 }
    h3 {
-    cursor: pointer;
     color: #71380F;
     height:600px;
     text-align: center;
@@ -63,7 +88,7 @@ img {
     background-size: 700px Auto;    
 } 
    h4 {
-    cursor: pointer;
+
     color: #71380F;
     height:600px;
     text-align: center;
@@ -74,7 +99,7 @@ img {
     margin-top:-25px;
     }
  h5 {
-    cursor: pointer;
+
     color: #71380F;
     height:800px;
     text-align: center;
@@ -88,7 +113,7 @@ img {
 }
  
 .mytextbox{
-    cursor: pointer;
+
     color: #71380F;
     height:600px;
     text-align: center;
@@ -101,7 +126,7 @@ img {
     margin-top:-25px;
     }
     #venueaddr{
-    cursor: pointer;
+
     color: #71380F;
     text-align: left;
     font-family:'Tangerine', cursive;
@@ -110,7 +135,7 @@ img {
     font-size:24px;
 }
 #mapbgholder{
-    cursor: pointer;
+
     color: #71380F;
     height:1100px;
     text-align: center;
@@ -139,13 +164,13 @@ img {
 
 @media (orientation: landscape) {
 #nc{
-left: .5%;bottom:0%;
+left: .01%;bottom:0%;
 height:100vh;
 position:fixed;
 z-index:0;
 }
 #pc{
-right: .5%;bottom:0%;
+right: .01%;bottom:0%;
 height:100vh;
 position:fixed;
 z-index:0;
@@ -189,13 +214,13 @@ z-index:0;
 
 @media (min-width: 800px) and (orientation: portrait) {
 #nc{
-left: .5%;
+left: .01%;
 height:0vh;
 position:fixed;
 z-index:0;
 }
 #pc{
-right: .5%;
+right: .01%;
 height:0vh;
 position:fixed;
 z-index:0;
@@ -237,13 +262,13 @@ z-index:0;
 }
 @media (max-width: 799px) and (orientation: portrait) {
 #nc{
-left: .5%;
+left: .01%;
 height:0vh;
 position:fixed;
 z-index:0;
 }
 #pc{
-right: .5%;
+right: .01%;
 height:0vh;
 position:fixed;
 z-index:0;
@@ -283,6 +308,7 @@ z-index:0;
     -o-background-size: cover;
  }
 }
+
 .btn-dark {
     border-radius: 0;
     color: #BD7F52;
@@ -295,6 +321,7 @@ z-index:0;
     color: #BD7F52;
     background-color: rgba(0,0,0,0.8);
 }
+
 form {
     /* Just to center the form on the page */
     margin: 0 auto;
@@ -396,13 +423,27 @@ var jQueryHeight = $( window ).height();
 var jQueryWidth = $( window ).width();
 
 });
+$(".fancybox").fancybox({
+    helpers : {
+        title: {
+            type: 'outside'
+        }
+    }
+});
 function init(){
     controlScroll();
     skipScroll();
     initialize();
     calcRoute();
-}
+    
+    document.getElementById("buttid").onclick = function() {
+            document.getElementById("landimg").style.display = "none";
+            document.getElementById("mpage").style.display = "";
+           
+};
 
+}
+   
 function controlScroll(){
 $(function() {
 	$( "#accordion" ).accordion({
@@ -511,23 +552,122 @@ dmode=0;
 google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
+<script type="text/javascript">
+//###################################################################
+// Author: ricocheting.com
+// Version: v3.0
+// Date: 2014-09-05
+// Description: displays the amount of time until the "dateFuture" entered below.
 
+var CDown = function() {
+	this.state=0;// if initialized
+	this.counts=[];// array holding countdown date objects and id to print to {d:new Date(2013,11,18,18,54,36), id:"countbox"}
+	this.interval=null;// setInterval object
+}
+
+CDown.prototype = {
+	init: function(){
+		this.state=1;
+		var self=this;
+		this.interval=window.setInterval(function(){self.tick();}, 1000);
+	},
+	add: function(date,id){
+		this.counts.push({d:date,id:id});
+		this.tick();
+		if(this.state==0) this.init();
+	},
+	expire: function(idxs){
+		for(var x in idxs) {
+			this.display(this.counts[idxs[x]], "Grab an auto :D !");
+			this.counts.splice(idxs[x], 1);
+		}
+	},
+	format: function(r){
+		var out="";
+		if(r.d != 0){out += r.d +" "+((r.d==1)?"day":"days")+", ";}
+		if(r.h != 0){out += r.h +" "+((r.h==1)?"hour":"hours")+", ";}
+		out += r.m +" "+((r.m==1)?"min":"mins")+", ";
+		out += r.s +" "+((r.s==1)?"sec":"secs to go!")+", ";
+
+		return out.substr(0,out.length-2);
+	},
+	math: function(work){
+		var	y=w=d=h=m=s=ms=0;
+
+		ms=(""+((work%1000)+1000)).substr(1,3);
+		work=Math.floor(work/1000);//kill the "milliseconds" so just secs
+
+		y=Math.floor(work/31536000);//years (no leapyear support)
+		w=Math.floor(work/604800);//weeks
+		d=Math.floor(work/86400);//days
+		work=work%86400;
+
+		h=Math.floor(work/3600);//hours
+		work=work%3600;
+
+		m=Math.floor(work/60);//minutes
+		work=work%60;
+
+		s=Math.floor(work);//seconds
+
+		return {y:y,w:w,d:d,h:h,m:m,s:s,ms:ms};
+	},
+	tick: function(){
+		var now=(new Date()).getTime(),
+			expired=[],cnt=0,amount=0;
+
+		if(this.counts)
+		for(var idx=0,n=this.counts.length; idx<n; ++idx){
+			cnt=this.counts[idx];
+			amount=cnt.d.getTime()-now;//calc milliseconds between dates
+
+			// if time is already past
+			if(amount<0){
+				expired.push(idx);
+			}
+			// date is still good
+			else{
+				this.display(cnt, this.format(this.math(amount)));
+			}
+		}
+
+		// deal with any expired
+		if(expired.length>0) this.expire(expired);
+
+		// if no active counts, stop updating
+		if(this.counts.length==0) window.clearTimeout(this.interval);
+		
+	},
+	display: function(cnt,msg){
+		document.getElementById(cnt.id).innerHTML=msg;
+	}
+};
+
+window.onload=function(){
+	var cdown = new CDown();
+
+	cdown.add(new Date(2015,0,21,12,59,59), "countbox");
+};
+</script>
 <style type="text/css"></style>
 
 
 </head>
 <body>
+<body link="#71380F">
         <div id="landimg">
             <div id="landingpage">
 		We are tying the knot!!<br>
                         </div>                       <div id="lbutton">
             
-            <a href="#accordion" class="btn btn-dark btn-lg" style="text-decoration:none;">Join us on our journey...</a>
+            <a href="#accordion" class="btn btn-dark btn-lg" style="text-decoration:none;" id="buttid">Join us on our journey...</a>
             </div>
         </div>
-
-<div id="pagewrap">
+<div id="mpage"  style="display:none">
     <img id="nc" src="./res/nct.png" >  <img id="pc" src="./res/pct.png">
+    <p id="intro"> We were too happy and bored living alone, that we decided to add more spice and anger to our lives by tying the knot on <b>Friday, the 23rd of January, 2015.</b> <br><br>You are cordially invited to attend the event.<br><br>-Sriniketh and Pavithra <br></p>
+<div id="countbox"> </div>
+<div id="pagewrap">
 <div id="accordion">
 <h2 id="top">How it all unfolded.. </h2>
 
@@ -546,13 +686,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div class="section">
 <h3>
 <div class="mytextbox">
-<h4>
-Maruthani <iframe src="https://www.flickr.com/photos/kvijesh/5520941396/player/" width="320" height="212" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-</h4>
+<br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Vratham on Jan 22 at 9am</em></ins></center><br>This event is performed separately by the bride and the groom. A holy thread is tied to the bride's hand symbolizing a protective armour from evil spirits. For the groom, vratham symbolizes that the days of his bachelor life are now over. He prepares for a new chapter as a householder." href="./res/vratham.jpg">Vratham on Jan 22 at 9am</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Nichayathartham on Jan 22 at 6pm</em></ins></center><br>The bride's family and the groom's family solemnise the final betrothal ceremony. The vedic priests chant the relevant hymns, including the names of the bride, the groom along with the names of three generations of ancestors." href="./res/nichayam.jpg">Nichayathartham on Jan 22 at 6pm</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Kaasi Yaathrai on Jan 23 at 7am</em></ins> </center><br>This is a very important part of the ceremony. After his student life, the bachelor starts on his way to Kasi(Varanasi) to take up sanyasam. On his way, the bride's father intervenes and advises him of the superiority of married life to ascetic life. He also promises to give his daughter as a companion to face the challenges of life and the groom agrees to marry his cute daughter" href="./res/muhurtham.jpg">Kaasi Yaathrai on Jan 23 at 7am</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Exchange of garlands and Oonjal on Jan 23 at 7:30am</em></ins></center><br>A garland worn by a person, should not be used by another, according to the shastras. The bride and the groom exchange garlands symbolizing their unification as a single source. The couple are then seated on a swing (Oonjal). They rock back and forth, as songs are sung praising the couple. Coloured globules of cooked rice are waved in circular motion and thrown away to propitiate the evil spirits. The to and fro motion represents the undulating sea waves of life. Yet in mind and bod, they shall move in harmony." href="./res/muhurtham.jpg">Exchange of garlands and Oonjal on Jan 23 at 7:30am</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Maangalya Dharanam on Jan 23 at 9am</em></ins></center><br>Timed to the exact auspicious hour, the bridegroom ties the gold Maanglaya Sutra around the neck of the bride. Nadaswaram and drums are played loud and fast in order to muffle any other inauspicious sounds at the critical moment. Three knots are tied. The first one by the bridegroom, the other two by his sister to make the bride as part of the groom's family." href="./res/muhurtham.jpg">Maanglaya Dharanam on Jan 23 at 9am</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Nalangu on Jan 23 at 3pm</em></ins></center><br>The bride and the groom play games, that are rigged to let the bride win. The event brings out many qualities in the bride and the groom for better understanding and compatibility." href="./res/muhurtham.jpg">Nalangu on Jan 23 at 3pm</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Reception on Jan 23 at 6:30pm</em></ins></center><br>An informal get-together of family and friends, celebrating the beginning of a great journey for the newly weds." href="./res/muhurtham.jpg">Reception on Jan 23 at 6:30pm</a><br><br>
+
 </div>
 </h3>
 </div>
-
 <h2 id="venue">Venue</h2>
 
 <div class="section">
@@ -641,9 +786,12 @@ I am looking forward to that Rasamalai... :P
 
 </div>
 </div>
+<!--
+<p id="footr">Hacked together with love, for rasamalai, by <a href="https://www.flickr.com/photos/lone_cocoa_bean/"  style="text-decoration:none;">Terrin Oculon.</a></p>
+-->
+</div>
 
   
-
 
 
 

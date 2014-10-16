@@ -427,6 +427,7 @@ $(".fancybox").fancybox({
     helpers : {
         title: {
             type: 'outside'
+            position : 'top'
         }
     }
 });
@@ -690,9 +691,9 @@ window.onload=function(){
 <a class="fancybox" rel="eventslist" title="<center><em><ins>Vratham on Jan 22 at 9am</em></ins></center><br>This event is performed separately by the bride and the groom. A holy thread is tied to the bride's hand symbolizing a protective armour from evil spirits. For the groom, vratham symbolizes that the days of his bachelor life are now over. He prepares for a new chapter as a householder." href="./res/vratham.jpg">Vratham on Jan 22 at 9am</a><br><br>
 <a class="fancybox" rel="eventslist" title="<center><em><ins>Nichayathartham on Jan 22 at 6pm</em></ins></center><br>The bride's family and the groom's family solemnise the final betrothal ceremony. The vedic priests chant the relevant hymns, including the names of the bride, the groom along with the names of three generations of ancestors." href="./res/nichayam.jpg">Nichayathartham on Jan 22 at 6pm</a><br><br>
 <a class="fancybox" rel="eventslist" title="<center><em><ins>Kaasi Yaathrai on Jan 23 at 7am</em></ins> </center><br>This is a very important part of the ceremony. After his student life, the bachelor starts on his way to Kasi(Varanasi) to take up sanyasam. On his way, the bride's father intervenes and advises him of the superiority of married life to ascetic life. He also promises to give his daughter as a companion to face the challenges of life and the groom agrees to marry his cute daughter" href="./res/muhurtham.jpg">Kaasi Yaathrai on Jan 23 at 7am</a><br><br>
-<a class="fancybox" rel="eventslist" title="<center><em><ins>Exchange of garlands and Oonjal on Jan 23 at 7:30am</em></ins></center><br>A garland worn by a person, should not be used by another, according to the shastras. The bride and the groom exchange garlands symbolizing their unification as a single source. The couple are then seated on a swing (Oonjal). They rock back and forth, as songs are sung praising the couple. Coloured globules of cooked rice are waved in circular motion and thrown away to propitiate the evil spirits. The to and fro motion represents the undulating sea waves of life. Yet in mind and bod, they shall move in harmony." href="./res/muhurtham.jpg">Exchange of garlands and Oonjal on Jan 23 at 7:30am</a><br><br>
-<a class="fancybox" rel="eventslist" title="<center><em><ins>Maangalya Dharanam on Jan 23 at 9am</em></ins></center><br>Timed to the exact auspicious hour, the bridegroom ties the gold Maanglaya Sutra around the neck of the bride. Nadaswaram and drums are played loud and fast in order to muffle any other inauspicious sounds at the critical moment. Three knots are tied. The first one by the bridegroom, the other two by his sister to make the bride as part of the groom's family." href="./res/muhurtham.jpg">Maanglaya Dharanam on Jan 23 at 9am</a><br><br>
-<a class="fancybox" rel="eventslist" title="<center><em><ins>Nalangu on Jan 23 at 3pm</em></ins></center><br>The bride and the groom play games, that are rigged to let the bride win. The event brings out many qualities in the bride and the groom for better understanding and compatibility." href="./res/muhurtham.jpg">Nalangu on Jan 23 at 3pm</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Exchange of garlands and Oonjal on Jan 23 at 7:30am</em></ins></center><br>A garland worn by a person, should not be used by another, according to the shastras. The bride and the groom exchange garlands symbolizing their unification as a single source. The couple are then seated on a swing (Oonjal). They rock back and forth, as songs are sung praising the couple. Coloured globules of cooked rice are waved in circular motion and thrown away to propitiate the evil spirits. The to and fro motion represents the undulating sea waves of life. Yet in mind and bod, they shall move in harmony." href="./res/oonjal.jpg">Exchange of garlands and Oonjal on Jan 23 at 7:30am</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Maangalya Dharanam on Jan 23 at 9am</em></ins></center><br>Timed to the exact auspicious hour, the bridegroom ties the gold Maanglaya Sutra around the neck of the bride. Nadaswaram and drums are played loud and fast in order to muffle any other inauspicious sounds at the critical moment. Three knots are tied. The first one by the bridegroom, the other two by his sister to make the bride as part of the groom's family." href="./res/mangalya.jpg">Maanglaya Dharanam on Jan 23 at 9am</a><br><br>
+<a class="fancybox" rel="eventslist" title="<center><em><ins>Nalangu on Jan 23 at 3pm</em></ins></center><br>The bride and the groom play games, that are rigged to let the bride win. The event brings out many qualities in the bride and the groom for better understanding and compatibility." href="./res/nalangu.jpg">Nalangu on Jan 23 at 3pm</a><br><br>
 <a class="fancybox" rel="eventslist" title="<center><em><ins>Reception on Jan 23 at 6:30pm</em></ins></center><br>An informal get-together of family and friends, celebrating the beginning of a great journey for the newly weds." href="./res/reception.jpg">Reception on Jan 23 at 6:30pm</a><br><br>
 
 </div>
@@ -780,6 +781,10 @@ I am looking forward to that Rasamalai... :P
 <br>
 -You Know Who
     </blockquote>
+<br>
+<blockquote> 
+    Pavi-Niketh, you are so lovely together. You have all the ingredients to make a perfect cocktail of love and cuteness and fun. Wish your relationship (sambandha-mendhi) all the luck to last forever.<br>-Ishan
+ </blockquote>    
 </div>
 </h5>
 </div>

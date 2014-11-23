@@ -81,7 +81,7 @@ img {
     text-align: center;
     font-family:'Tangerine', cursive;
     font-style:oblique;
-    background-image:url("./res/scroll.png");
+    background-image:url("./res/scroll_ev.png");
     margin-top:-48px;
     background-repeat:no-repeat;
     background-position:center -94px;
@@ -179,11 +179,21 @@ z-index:0;
     position: relative;
     height:100vh;
     z-index:1;
-    background: url("./res/handsf_rs.jpg") no-repeat center center scroll;
+    background: url("./res/hands_bg.png") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+ }
+#landimgfg{
+    position: relative;
+    height:100vh;
+    z-index:1;
+    background: url("./res/hands_fg.png") no-repeat center center scroll;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    -o-background-size: contain;
  }
 
    #lbutton{
@@ -253,7 +263,7 @@ z-index:0;
     position: relative;
     height:100vh;
     z-index:1;
-    background: url("./res/lands_comp.png") no-repeat center center scroll;
+    background: url("./res/handsf_r.png") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -301,7 +311,7 @@ z-index:0;
     position: relative;
     height:0vh;
     z-index:1;
-    background: url("./res/lands_comp.png") no-repeat center center scroll;
+    background: url("./res/handsf_r.png") no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -657,13 +667,12 @@ window.onload=function(){
 <body>
 <body link="#71380F">
         <div id="landimg">
-            <div id="landingpage">
-		We are tying the knot!!<br>
-                        </div>                       <div id="lbutton">
+<div id="landimgfg">
+                            <div id="lbutton">
             
             <a href="#accordion" class="btn btn-dark btn-lg" style="text-decoration:none;" id="buttid">Join us on our journey...</a>
             </div>
-        </div>
+        </div>        </div>
 <div id="mpage"  style="display:none">
     <img id="nc" src="./res/nct.png" >  <img id="pc" src="./res/pct.png">
     <p id="intro"> We were too happy and bored living alone, that we decided to add more spice and anger to our lives by tying the knot on <b>Friday, the 23rd of January, 2015.</b> <br><br>You are cordially invited to attend the event.<br><br>-Sriniketh and Pavithra <br></p>

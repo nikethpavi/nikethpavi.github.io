@@ -213,12 +213,12 @@ h5 {
 }
 #commentsbgholder{
         color: #71380F;
-        height:1100px;
+        height:1300px;
         text-align: center;
         margin-top:-48px;
         font-family:'Tangerine', cursive;
         font-style:oblique;
-        background-image:url("./res/scrollh9.png");
+        background-image:url("./res/scrollev.png");
         background-repeat:no-repeat;
         background-position:center -94px;
         background-size: 700px Auto;    
